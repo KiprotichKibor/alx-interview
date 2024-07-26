@@ -2,6 +2,8 @@
 """
 Prints a Pascal's triangle in a list
 """
+
+
 def pascal_triangle(n):
     """
     Generates Pascal's triangle of n rows
