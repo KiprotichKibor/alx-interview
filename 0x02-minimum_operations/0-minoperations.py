@@ -6,13 +6,15 @@ Module that contains the minOperations function.
 
 def minOperations(n):
     """
-    Calculate the fewest number of operations needed to result in exactly n H characters.
+    Calculate the fewest number of operations
+    needed to result in exactly n H characters.
 
     Args:
         n (int): The desired number of H characters.
 
     Returns:
-        int: The minimum number of operations. Returns 0 if n is impossible to achieve.
+        int: The minimum number of operations.
+        Returns 0 if n is impossible to achieve.
     """
     if n <= 1:
         return 0
