@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Module for making change using the fewest number of coins (optimized version)
+Module for making change using the fewest number of coins (highly optimized version)
 """
 
 
@@ -18,15 +18,15 @@ def makeChange(coins, total):
     if total <= 0:
         return 0
 
-    # Sort coins in descending order for greedy approach
-    coins.sort(reverse=True)
-
-    # Initialize an array to store the minimum coins needed for each amount
-    dp = [float('inf')] * (total + 1)
+    # Initialize the dp array with total + 1 (an impossible answer)
+    dp = [total + 1] * (total + 1)
     dp[0] = 0
 
-    for coin in coins:
-        for i in range(coin, total + 1):
-            dp[i] = min(dp[i], dp[i - coin] + 1)
+    # Iterate through all amounts from 1 to total
+    for i in range(1, total + 1):
+        # Try each coin
+        for coin in coins:
+            if coin <= i:
+                dp[i] = min(dp[i], dp[i - coin] + 1)
 
-    return dp[total] if dp[total] != float('inf') else -1
+    return dp[total] if dp[total] <= total else -1
