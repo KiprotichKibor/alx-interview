@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Module for making change using the fewest number of coins (highly optimized version)
+Module for making change using the fewest number of coins
 """
 
 
